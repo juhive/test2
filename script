@@ -1,0 +1,21 @@
+#!/bin/bash
+
+echo 'Nombre de client'
+read NbClient
+
+echo 'Nombre de worker'
+read NbWorker
+
+i=0
+j=0
+
+while i -le NbClient do
+    java - jar MessageClientClient.jar
+    i=$[$i+1]
+done
+
+
+while j -le NbWorker do
+    java - jar MessageClientWorker.jar
+    j=$[$j+1]
+done
